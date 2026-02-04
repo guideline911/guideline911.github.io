@@ -6,32 +6,44 @@
     <title>GUIDELINE | Portfolio</title>
     
     <meta property="og:title" content="GUIDELINE | Portfolio">
+    <meta property="og:description" content="معرض أعمال التصميم الجرافيكي الخاص بـ GUIDELINE">
     <meta property="og:image" content="https://guideline911.github.io/1.png">
+    <meta property="og:url" content="https://guideline911.github.io/">
+    
     <link rel="icon" type="image/png" href="1.png">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
-        body { font-family: 'Tajawal', sans-serif; background-color: #f8fafc; color: #1e293b; margin: 0; scroll-behavior: smooth; }
+        body { font-family: 'Tajawal', sans-serif; background-color: #111827; color: #f8fafc; margin: 0; scroll-behavior: smooth; }
         
-        /* Lightbox - تكبير الصور */
-        #lightboxOverlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; justify-content: center; align-items: center; cursor: zoom-out; }
-        #lightboxImage { max-width: 90%; max-height: 85%; border-radius: 15px; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+        #lightboxOverlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999; justify-content: center; align-items: center; cursor: zoom-out; padding: 20px; }
+        #lightboxImage { max-width: 100%; max-height: 90%; border: 2px solid #374151; border-radius: 12px; transition: transform 0.3s; }
         
-        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .hero-card { background: #ffffff; border-radius: 2.5rem; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+        .glass-nav { background: rgba(17, 24, 39, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hero-card { background: #1f2937; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
         
-        .work-card { background: #ffffff; border-radius: 1.5rem; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); transition: 0.4s ease; cursor: pointer; }
-        .work-card:hover { transform: translateY(-10px); border-color: #38bdf8; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .work-card { background: #1f2937; border-radius: 1.25rem; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; cursor: pointer; }
+        .work-card:hover { transform: translateY(-10px); border-color: #38bdf8; box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2); }
         
-        /* تنسيق الروابط الاجتماعية بناءً على الصورة */
-        .social-link { display: flex; align-items: center; justify-content: flex-end; gap: 0.75rem; color: #64748b; transition: 0.3s; font-size: 1rem; font-weight: 500; }
-        .social-link:hover { color: #0ea5e9; }
-        .social-link i { font-size: 1.6rem; }
-
-        .badge { border: 1px solid #bae6fd; color: #0ea5e9; padding: 4px 16px; border-radius: 99px; font-size: 0.75rem; font-weight: 800; background: #f0f9ff; }
+        .social-link { 
+            display: flex; 
+            align-items: center; 
+            gap: 0.75rem; 
+            color: #cbd5e1; 
+            transition: 0.3s; 
+            background: rgba(255,255,255,0.03); 
+            padding: 10px 15px; 
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .social-link:hover { 
+            color: #38bdf8; 
+            background: rgba(56, 189, 248, 0.1); 
+            border-color: #38bdf8;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -43,46 +55,39 @@
     <nav class="glass-nav fixed top-0 w-full z-50 px-6 py-4">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <img src="1.png" class="w-10 h-10 rounded-full border-2 border-sky-400 object-cover">
-                <span class="text-2xl font-black text-slate-800 tracking-tighter">GUIDELINE</span>
+                <img src="1.png" class="w-10 h-10 rounded-full border-2 border-sky-500 object-cover">
+                <span class="text-2xl font-black text-white">GUIDELINE</span>
             </div>
-            <a href="#contact" class="bg-sky-500 hover:bg-sky-600 px-6 py-2 rounded-full text-white font-bold transition-all shadow-md">تواصل معي</a>
+            <a href="#contact" class="bg-sky-500 hover:bg-sky-600 px-6 py-2 rounded-full text-white font-bold transition">تواصل معي</a>
         </div>
     </nav>
 
     <header class="pt-32 pb-12 px-6">
-        <div class="max-w-5xl mx-auto hero-card p-10 md:p-16 relative">
-            <div class="flex justify-end mb-4">
-                <span class="badge">Graphic Designer Portfolio</span>
-            </div>
-
-            <h1 class="text-6xl md:text-8xl font-black mb-4 uppercase text-center md:text-right tracking-tighter">
-                GUIDELINE <span class="text-sky-500">DESIGN</span>
-            </h1>
-
-            <p class="text-gray-400 text-lg md:text-xl text-center md:text-right mb-12 leading-relaxed">
-                نحول أفكارك إلى تجارب بصرية مبهرة ومحترفة. تواصل معي مباشرة عبر:
-            </p>
+        <div class="max-w-5xl mx-auto hero-card p-6 md:p-12">
+            <h1 class="text-5xl md:text-7xl font-black mb-4 uppercase text-center md:text-right">GUIDELINE <span class="text-sky-500">DESIGN</span></h1>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-8 border-t border-gray-100 pt-10">
-                <a href="https://www.tiktok.com/@guidelinedesign" target="_blank" class="social-link">
-                    guidelinedesign@ <i class="fa-brands fa-tiktok text-black"></i>
-                </a>
-                <a href="https://www.instagram.com/amr_aboelnasr2020" target="_blank" class="social-link">
-                    amr_aboelnasr2020@ <i class="fa-brands fa-instagram text-pink-500"></i>
-                </a>
-                <a href="https://www.facebook.com/GuidelineDesign911" target="_blank" class="social-link">
-                    Facebook/Guideline <i class="fa-brands fa-facebook text-blue-600"></i>
-                </a>
+            <p class="text-gray-400 text-lg md:text-xl text-center md:text-right mb-8 leading-relaxed">
+                نحول أفكارك إلي تجارب بصرية مبهرة ومحترفة . تواصل معنا مباشرتة عبر :
+            </p>
 
-                <a href="tel:00966557935928" class="social-link">
-                    0557935928 <i class="fa-solid fa-phone text-sky-400"></i>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 border-t border-gray-700 pt-8">
+                <a href="https://www.facebook.com/GuidelineDesign911" target="_blank" class="social-link">
+                    <i class="fa-brands fa-facebook text-sky-500 text-xl"></i> <span>Facebook</span>
                 </a>
                 <a href="https://wa.me/966557935928" target="_blank" class="social-link">
-                    966557935928 <i class="fa-brands fa-whatsapp text-green-500"></i>
+                    <i class="fa-brands fa-whatsapp text-green-500 text-xl"></i> <span>WhatsApp</span>
+                </a>
+                <a href="https://www.instagram.com/amr_aboelnasr2020" target="_blank" class="social-link">
+                    <i class="fa-brands fa-instagram text-pink-500 text-xl"></i> <span>Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@guidelinedesign" target="_blank" class="social-link">
+                    <i class="fa-brands fa-tiktok text-white text-xl"></i> <span>TikTok</span>
                 </a>
                 <a href="https://www.behance.net/guideline911" target="_blank" class="social-link">
-                    behance/guideline911 <i class="fa-brands fa-behance text-blue-700"></i>
+                    <i class="fa-brands fa-behance text-blue-500 text-xl"></i> <span>Behance</span>
+                </a>
+                <a href="tel:00966557935928" class="social-link">
+                    <i class="fa-solid fa-phone text-sky-400 text-xl"></i> <span>0557935928</span>
                 </a>
             </div>
         </div>
@@ -93,31 +98,35 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="projects-grid"></div>
     </section>
 
-    <footer id="contact" class="py-20 text-center border-t border-gray-100 bg-white">
-        <p class="text-gray-400 font-bold uppercase tracking-widest">GUIDELINE &copy; 2026</p>
+    <footer id="contact" class="py-20 text-center border-t border-gray-800">
+        <p class="text-gray-500 font-bold uppercase tracking-widest mb-4">GUIDELINE &copy; 2026</p>
+        <div class="flex justify-center gap-6">
+            <a href="https://wa.me/966557935928" class="text-gray-400 hover:text-green-500 transition text-2xl"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/GuidelineDesign911" class="text-gray-400 hover:text-sky-500 transition text-2xl"><i class="fa-brands fa-facebook"></i></a>
+        </div>
     </footer>
 
     <script>
         const grid = document.getElementById('projects-grid');
         const overlay = document.getElementById('lightboxOverlay');
-        const lImg = document.getElementById('lightboxImage');
+        const lightboxImg = document.getElementById('lightboxImage');
 
-        // كود إنشاء الـ 50 عمل
         for (let i = 1; i <= 50; i++) {
             const card = document.createElement('div');
-            card.className = 'work-card';
+            card.className = 'work-card group';
             card.innerHTML = `
-                <div class="aspect-square bg-slate-50 flex items-center justify-center overflow-hidden">
-                    <img src="${i}.png" class="w-full h-full object-contain p-2 transition-transform duration-500 hover:scale-105" 
-                         onerror="this.src='https://via.placeholder.com/400/f1f5f9/0ea5e9?text=Design+${i}'">
+                <div class="aspect-square overflow-hidden bg-gray-900">
+                    <img src="${i}.png" class="w-full h-full object-contain transition duration-500 group-hover:scale-110" 
+                         onerror="this.src='https://via.placeholder.com/400/1f2937/38bdf8?text=Design+${i}'"
+                         loading="lazy">
                 </div>
-                <div class="p-4 text-center border-t border-slate-50 bg-white">
-                    <p class="text-sky-500 text-xs font-black uppercase tracking-tighter">Project #${i}</p>
+                <div class="p-4 text-center border-t border-gray-800 bg-gray-900/50">
+                    <p class="text-sky-500 text-xs font-bold uppercase tracking-wider">Project #${i}</p>
                 </div>
             `;
-            // تفعيل التكبير عند الضغط
+            
             card.onclick = () => { 
-                lImg.src = `${i}.png`; 
+                lightboxImg.src = `${i}.png`; 
                 overlay.style.display = 'flex'; 
                 document.body.style.overflow = 'hidden'; 
             };
