@@ -8,8 +8,6 @@
     <meta property="og:title" content="GUIDELINE | Portfolio">
     <meta property="og:description" content="معرض أعمال التصميم الجرافيكي - نحول أفكارك إلى واقع بصري مبهر.">
     <meta property="og:image" content="https://guideline911.github.io/1.png">
-    <meta property="og:url" content="https://guideline911.github.io/">
-    <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="1.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,27 +16,51 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
         body { font-family: 'Tajawal', sans-serif; background-color: #f1f5f9; color: #1e293b; margin: 0; scroll-behavior: smooth; }
+        
+        /* تنسيق الـ Lightbox (إطار التكبير) */
+        #lightboxOverlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        #lightboxImage {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 50px;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        /* تنسيق البطاقات */
         .glass-nav { background: white; border-bottom: 1px solid #e2e8f0; }
         .hero-card { background: white; border-radius: 1.5rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
         .work-card { background: white; border-radius: 1rem; overflow: hidden; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1); transition: 0.3s; cursor: pointer; }
         .work-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); }
         .social-link { display: flex; align-items: center; gap: 0.5rem; color: #475569; font-size: 0.9rem; transition: 0.3s; }
-        .social-link i { font-size: 1.5rem; }
         .social-link:hover { color: #0ea5e9; }
         .contact-gradient { background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%); }
-
-        /* تنسيق نافذة تكبير الصور (Lightbox) */
-        #lightbox { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.9); z-index: 9999; align-items: center; justify-content: center; padding: 20px; }
-        #lightbox img { max-width: 90%; max-height: 85vh; border-radius: 8px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
-        #close-lightbox { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; transition: 0.3s; }
-        #close-lightbox:hover { color: #0ea5e9; }
     </style>
 </head>
 <body class="bg-slate-50">
 
-    <div id="lightbox" onclick="closeImage()">
-        <span id="close-lightbox" onclick="closeImage()">&times;</span>
-        <img id="lightbox-img" src="" alt="Enlarged" onclick="event.stopPropagation()">
+    <div id="lightboxOverlay" onclick="this.style.display='none'">
+        <span class="close-btn">&times;</span>
+        <img id="lightboxImage" src="" alt="Enlarged view">
     </div>
 
     <nav class="glass-nav fixed top-0 w-full z-50 px-6 py-3">
@@ -48,8 +70,8 @@
                 <span class="text-2xl font-black text-slate-800 tracking-tighter uppercase">GUIDELINE</span>
             </div>
             <div class="hidden md:flex items-center space-x-reverse space-x-8 text-sm font-bold">
-                <a href="#home" class="hover:text-sky-50 transition">الرئيسية</a>
-                <a href="#work" class="hover:text-sky-50 transition">أعمالي</a>
+                <a href="#home" class="hover:text-sky-500 transition">الرئيسية</a>
+                <a href="#work" class="hover:text-sky-500 transition">أعمالي</a>
                 <a href="#contact" class="bg-sky-500 px-6 py-2 rounded-full hover:bg-sky-600 transition text-white">Contact Us</a>
             </div>
         </div>
@@ -57,88 +79,66 @@
 
     <header id="home" class="pt-32 pb-10 px-6">
         <div class="max-w-4xl mx-auto hero-card p-10 text-center md:text-right">
-            <div class="inline-block px-4 py-1 mb-6 border border-sky-200 rounded-full text-sky-600 text-xs font-bold bg-sky-50">
-                Graphic Designer Portfolio
-            </div>
             <h1 class="text-5xl md:text-6xl font-black mb-4 uppercase text-slate-900">GUIDELINE <span class="text-sky-500">DESIGN</span></h1>
-            <p class="text-slate-500 text-lg mb-10 max-w-2xl">نحول أفكارك إلى تجارب بصرية مبهرة ومحترفة. اضغط على أي عمل لتكبيره.</p>
+            <p class="text-slate-500 text-lg mb-10">اضغط على أي صورة لعرضها بحجم كبير بوضوح.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border-t pt-10">
-                <a href="https://www.facebook.com/share/12AnHByX9x5/" target="_blank" class="social-link">
-                    <i class="fa-brands fa-facebook text-blue-600"></i> Facebook/Guideline
-                </a>
-                <a href="https://www.instagram.com/amr_aboelnasr2020" target="_blank" class="social-link">
-                    <i class="fa-brands fa-instagram text-pink-600"></i> @amr_aboelnasr2020
-                </a>
-                <a href="https://www.tiktok.com/@guidelinedesign" target="_blank" class="social-link">
-                    <i class="fa-brands fa-tiktok text-black"></i> @guidelinedesign
-                </a>
-                <a href="https://www.behance.net/guideline911" target="_blank" class="social-link">
-                    <i class="fa-brands fa-behance text-blue-700"></i> behance/guideline911
-                </a>
-                <a href="https://wa.me/966557935928" target="_blank" class="social-link">
-                    <i class="fa-brands fa-whatsapp text-green-500"></i> 966557935928
-                </a>
-                <a href="tel:00966557935928" class="social-link">
-                    <i class="fa-solid fa-phone text-sky-500"></i> 0557935928
-                </a>
+                <a href="https://www.facebook.com/share/12AnHByX9x5/" target="_blank" class="social-link"><i class="fa-brands fa-facebook text-blue-600"></i> Facebook</a>
+                <a href="https://www.instagram.com/amr_aboelnasr2020" target="_blank" class="social-link"><i class="fa-brands fa-instagram text-pink-600"></i> Instagram</a>
+                <a href="https://www.tiktok.com/@guidelinedesign" target="_blank" class="social-link"><i class="fa-brands fa-tiktok text-black"></i> TikTok</a>
+                <a href="https://www.behance.net/guideline911" target="_blank" class="social-link"><i class="fa-brands fa-behance text-blue-700"></i> Behance</a>
+                <a href="https://wa.me/966557935928" target="_blank" class="social-link"><i class="fa-brands fa-whatsapp text-green-500"></i> WhatsApp</a>
+                <a href="tel:00966557935928" class="social-link"><i class="fa-solid fa-phone text-sky-500"></i> Call Us</a>
             </div>
         </div>
     </header>
 
     <section id="work" class="max-w-6xl mx-auto py-10 px-6">
-        <h2 class="text-3xl font-black mb-8 text-slate-800 border-r-4 border-sky-500 pr-4">معرض الأعمال</h2>
+        <h2 class="text-3xl font-black mb-8 text-slate-800 border-r-4 border-sky-500 pr-4 italic">معرض الأعمال</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="projects-grid">
-            <script>
-                const grid = document.getElementById('projects-grid');
-                for (let i = 1; i <= 50; i++) {
-                    grid.innerHTML += `
-                        <div class="work-card" onclick="openImage('${i}.png')">
-                            <div class="aspect-square bg-slate-200">
-                                <img src="${i}.png" class="w-full h-full object-cover" 
-                                     onerror="this.src='https://via.placeholder.com/400/f1f5f9/0ea5e9?text=Project+${i}'">
-                            </div>
-                            <div class="p-4 border-t">
-                                <h3 class="font-bold text-slate-800 text-sm">GuideLine Design</h3>
-                                <p class="text-[10px] text-slate-400 uppercase tracking-widest">Project #${i}</p>
-                            </div>
-                        </div>
-                    `;
-                }
-
-                // وظيفة فتح الصورة
-                function openImage(src) {
-                    const lightbox = document.getElementById('lightbox');
-                    const img = document.getElementById('lightbox-img');
-                    img.src = src;
-                    lightbox.style.display = 'flex';
-                    document.body.style.overflow = 'hidden'; // منع السكرول عند الفتح
-                }
-
-                // وظيفة إغلاق الصورة
-                function closeImage() {
-                    const lightbox = document.getElementById('lightbox');
-                    lightbox.style.display = 'none';
-                    document.body.style.overflow = 'auto'; // إعادة السكرول
-                }
-            </script>
-        </div>
+            </div>
     </section>
 
     <section id="contact" class="max-w-4xl mx-auto py-20 px-6 text-center">
-        <div class="contact-gradient rounded-[2.5rem] p-16 shadow-xl text-white">
-            <h2 class="text-4xl font-black mb-4 uppercase">جاهز لبدء مشروعك؟</h2>
-            <div class="flex justify-center">
-                <a href="tel:00966557935928" class="bg-white text-sky-600 px-10 py-5 rounded-full font-black text-2xl hover:scale-105 transition flex items-center gap-4 shadow-lg">
-                    <i class="fa-solid fa-phone"></i> 0557935928
-                </a>
-            </div>
+        <div class="contact-gradient rounded-[2.5rem] p-12 text-white shadow-xl">
+            <h2 class="text-3xl font-black mb-8">جاهز للعمل معاً؟</h2>
+            <a href="tel:00966557935928" class="bg-white text-sky-600 px-8 py-4 rounded-full font-black text-xl flex items-center gap-3 mx-auto w-fit shadow-lg">
+                <i class="fa-solid fa-phone"></i> 0557935928
+            </a>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-slate-400 text-sm">
-        <p>GUIDELINE &copy; 2026 - جميع الحقوق محفوظة</p>
+    <footer class="py-10 text-center text-slate-400">
+        <p>GUIDELINE &copy; 2026</p>
     </footer>
+
+    <script>
+        const grid = document.getElementById('projects-grid');
+        const overlay = document.getElementById('lightboxOverlay');
+        const lightboxImg = document.getElementById('lightboxImage');
+
+        // توليد الـ 50 صورة
+        for (let i = 1; i <= 50; i++) {
+            const card = document.createElement('div');
+            card.className = 'work-card';
+            card.innerHTML = `
+                <div class="aspect-square bg-slate-200">
+                    <img src="${i}.png" class="w-full h-full object-cover" 
+                         onerror="this.src='https://via.placeholder.com/400/f1f5f9/0ea5e9?text=Project+${i}'">
+                </div>
+                <div class="p-4 border-t text-center">
+                    <h3 class="font-bold text-slate-800 text-sm">GuideLine Design</h3>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-widest">Project #${i}</p>
+                </div>
+            `;
+            // عند الضغط على الكارت تظهر الصورة كبيرة
+            card.onclick = () => {
+                lightboxImg.src = `${i}.png`;
+                overlay.style.display = 'flex';
+            };
+            grid.appendChild(card);
+        }
+    </script>
 
 </body>
 </html>
