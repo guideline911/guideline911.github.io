@@ -3,72 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GUIDELINE | Portfolio</title>
+    <title>GUIDELINE | المصمم المبدع</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Tajawal', sans-serif; background-color: #030712; color: #ffffff; }
-        .glass-nav { background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .gradient-text { background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .project-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(255,255,255,0.05); }
-        .project-card:hover { transform: translateY(-8px); border-color: rgba(56, 189, 248, 0.4); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        body { font-family: 'Tajawal', sans-serif; background-color: #020617; color: white; }
+        .glass { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .hero-glow { background: radial-gradient(circle at center, rgba(56, 189, 248, 0.15) 0%, transparent 70%); }
     </style>
 </head>
 <body>
-
-    <nav class="glass-nav fixed top-0 w-full z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-black tracking-tighter gradient-text">GUIDELINE</div>
-            <div class="flex items-center space-x-reverse space-x-8 text-sm">
-                <a href="#home" class="text-gray-400 hover:text-white transition">الرئيسية</a>
-                <a href="#portfolio" class="text-gray-400 hover:text-white transition">أعمالي</a>
-                <a href="mailto:contact@guideline.com" class="bg-sky-500 hover:bg-sky-600 px-5 py-2 rounded-full font-bold transition shadow-lg shadow-sky-500/20">تواصل معي</a>
+    <nav class="glass fixed top-0 w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tighter text-sky-400">GUIDELINE</div>
+            <div class="flex space-x-reverse space-x-6 text-sm font-bold">
+                <a href="#" class="hover:text-sky-400 transition">الرئيسية</a>
+                <a href="#work" class="hover:text-sky-400 transition text-gray-400">أعمالي</a>
+                <a href="mailto:contact@guideline.com" class="bg-sky-500 px-5 py-2 rounded-full hover:bg-sky-600 transition shadow-lg shadow-sky-500/20">تواصل الآن</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
-        <div class="inline-block px-4 py-1 mb-6 border border-sky-500/20 rounded-full text-sky-400 text-xs font-bold uppercase tracking-widest bg-sky-500/5">
-            Graphic Designer Portfolio
-        </div>
-        <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight">نصنع جمالاً <br><span class="gradient-text">بلمسة فنية.</span></h1>
-        <p class="text-gray-400 text-xl max-w-2xl leading-relaxed mb-10">أهلاً بك في عالم GUIDELINE، حيث تتحول الأفكار إلى هويات بصرية خالدة.</p>
-        <a href="#portfolio" class="animate-bounce p-2 border border-gray-800 rounded-full text-gray-500 hover:text-sky-400 hover:border-sky-400 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-        </a>
-    </section>
-
-    <section id="portfolio" class="max-w-7xl mx-auto py-32 px-6">
-        <div class="mb-20">
-            <h2 class="text-4xl font-black mb-4">معرض الأعمال</h2>
-            <div class="h-1.5 w-24 bg-sky-500 rounded-full"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div class="project-card bg-[#0b1120] rounded-[2.5rem] overflow-hidden group">
-                <div class="aspect-square overflow-hidden bg-black p-4">
-                    <img src="1.png" class="w-full h-full object-contain transition duration-700 group-hover:scale-105">
-                </div>
-                <div class="p-8">
-                    <span class="text-sky-400 text-xs font-bold tracking-widest uppercase">Identity Design</span>
-                    <h3 class="text-2xl font-bold mt-2">هوية Guideline البصرية</h3>
-                </div>
-            </div>
-
-            <div class="project-card bg-[#0b1120]/40 border-dashed border-2 border-gray-800 rounded-[2.5rem] flex flex-col items-center justify-center min-h-[400px] text-gray-700 group">
-                <div class="text-5xl group-hover:text-sky-500 transition mb-4">+</div>
-                <p class="font-bold">ارفع صورتك القادمة</p>
-                <p class="text-xs mt-1">باسم 2.png</p>
+    <section class="hero-glow min-h-screen flex flex-col items-center justify-center text-center px-6">
+        <h1 class="text-6xl md:text-8xl font-black mb-6 leading-tight">تصميم <span class="text-sky-500 italic">بشغف</span><br>إبداع بلا حدود.</h1>
+        <p class="text-gray-400 text-xl max-w-2xl mb-10 leading-relaxed">بورتفوليو خاص لعرض الهويات البصرية والتصاميم الجرافيكية الأكثر ابتكاراً.</p>
+        <div class="flex space-x-reverse space-x-4">
+            <div class="h-12 w-12 rounded-full border border-gray-700 flex items-center justify-center animate-bounce">
+                <span class="text-sky-400">↓</span>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-gray-600 border-t border-gray-900/50">
-        <p class="text-sm">GUIDELINE &copy; 2026 - جميع الحقوق محفوظة</p>
+    <section id="work" class="max-w-7xl mx-auto py-32 px-6">
+        <h2 class="text-4xl font-black mb-16 inline-block border-b-4 border-sky-500 pb-2">أحدث المشاريع</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            
+            <div class="group relative bg-slate-900 rounded-[2rem] overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-500 shadow-2xl">
+                <div class="aspect-video overflow-hidden">
+                    <img src="1.png" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="p-10">
+                    <h3 class="text-3xl font-bold mb-3">هوية GUIDELINE</h3>
+                    <p class="text-gray-400">مشروع تصميم متكامل يبرز قوة البساطة في الهويات البصرية.</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/50 border-2 border-dashed border-slate-800 rounded-[2rem] flex flex-col items-center justify-center min-h-[400px]">
+                <p class="text-slate-600 font-bold mb-2">المشروع القادم</p>
+                <div class="text-sky-500 text-2xl font-bold">قريباً</div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-gray-600 border-t border-slate-900">
+        <p>© 2026 GUIDELINE - جميع الحقوق محفوظة</p>
     </footer>
-
 </body>
 </html>
