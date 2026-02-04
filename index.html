@@ -3,59 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guideline911 | Portfolio</title>
+    <title>Guideline911 Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
-        body { font-family: 'Tajawal', sans-serif; background: #0f172a; color: white; }
-        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .work-card:hover img { transform: scale(1.1); }
+        body { font-family: 'Tajawal', sans-serif; background-color: #050505; color: #ffffff; }
+        .hero-gradient { background: radial-gradient(circle at center, #1e293b 0%, #050505 100%); }
+        .card-hover:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2); }
     </style>
 </head>
 <body>
-    <nav class="flex justify-between items-center p-6 max-w-6xl mx-auto">
-        <div class="text-2xl font-bold gradient-text">GUIDELINE</div>
-        <div class="space-x-reverse space-x-6 text-sm">
-            <a href="#" class="hover:text-sky-400 transition">الرئيسية</a>
-            <a href="#" class="hover:text-sky-400 transition">أعمالي</a>
-            <a href="#" class="bg-sky-500 px-4 py-2 rounded-lg hover:bg-sky-600 transition">تواصل معي</a>
+    <header class="hero-gradient min-h-[60vh] flex flex-col items-center justify-center text-center px-6">
+        <div class="inline-block px-4 py-1 mb-6 border border-sky-500/30 rounded-full text-sky-400 text-sm animate-pulse">
+            متاح للمشاريع الجديدة 2026
         </div>
-    </nav>
-
-    <header class="py-20 text-center max-w-4xl mx-auto px-4">
-        <h1 class="text-5xl font-extrabold mb-6">أصنع <span class="gradient-text">هويات بصرية</span> تترك أثراً.</h1>
-        <p class="text-gray-400 text-lg leading-relaxed">أهلاً بك، أنا مصمم جرافيك متخصص في بناء العلامات التجارية والشعارات المبتكرة.</p>
+        <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter">GUIDELINE<span class="text-sky-500">.</span></h1>
+        <p class="text-gray-400 text-xl max-w-2xl leading-relaxed">أقوم بتحويل الأفكار المعقدة إلى تجارب بصرية بسيطة ومذهلة.</p>
     </header>
 
-    <section class="max-w-6xl mx-auto px-6 pb-20">
-        <h2 class="text-2xl font-bold mb-10 border-r-4 border-sky-500 pr-4">أحدث المشاريع</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <main class="max-w-7xl mx-auto py-20 px-6">
+        <div class="flex justify-between items-end mb-16">
+            <div>
+                <h2 class="text-3xl font-bold mb-2">معرض الأعمال</h2>
+                <div class="h-1 w-20 bg-sky-500"></div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             
-            <div class="work-card bg-slate-800 rounded-2xl overflow-hidden shadow-2xl transition duration-500">
-                <div class="h-64 overflow-hidden">
-                    <img src="1.png" alt="Guideline Design" class="w-full h-full object-cover transition duration-500">
+            <div class="card-hover group relative bg-[#111] rounded-3xl overflow-hidden transition-all duration-500">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="1.png" alt="Guideline Design" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
                 </div>
-                <div class="p-6">
-                    <span class="text-xs text-sky-400 font-bold tracking-widest uppercase">Identity Design</span>
-                    <h3 class="text-xl font-bold mt-2">تصميم هوية Guideline</h3>
-                    <p class="text-gray-400 mt-2 text-sm">مشروع يبرز قوة الخطوط والدمج اللوني في الشعارات.</p>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold mb-2">هوية بصرية Guideline</h3>
+                    <p class="text-gray-500 text-sm">تصميم شعار وتنسيق ألوان إبداعي.</p>
                 </div>
             </div>
 
-            <div class="work-card bg-slate-800 rounded-2xl overflow-hidden shadow-2xl opacity-50 border border-dashed border-slate-600">
-                <div class="h-64 flex items-center justify-center text-slate-500">
-                    <p>قريباً.. ارفع صورة 2.png</p>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mt-2 italic">مشروعك القادم</h3>
+            <div class="card-hover bg-[#111] rounded-3xl overflow-hidden border border-dashed border-gray-800 flex flex-col items-center justify-center h-full min-h-[400px]">
+                <div class="text-gray-600 text-center p-10">
+                    <p class="mb-4">ارفع صورتك القادمة باسم 2.png</p>
+                    <div class="text-4xl">+</div>
                 </div>
             </div>
 
         </div>
-    </section>
+    </main>
 
-    <footer class="text-center p-10 border-t border-slate-800 text-gray-500 text-sm">
-        جميع الحقوق محفوظة © 2026 Guideline911
+    <footer class="py-20 text-center border-t border-gray-900">
+        <p class="text-gray-500">تم التطوير بواسطة Guideline911 &copy; 2026</p>
     </footer>
 </body>
 </html>
