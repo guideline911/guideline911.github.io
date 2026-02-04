@@ -13,8 +13,13 @@
         .hero-section { padding-top: 100px; padding-bottom: 40px; }
         .work-card { border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; background: #0b1120; border-radius: 2rem; overflow: hidden; }
         .work-card:hover { border-color: #38bdf8; transform: translateY(-5px); }
-        .social-icon { font-size: 1.8rem; color: #94a3b8; transition: 0.3s; }
+        /* تحسين مظهر الأيقونات */
+        .social-icon { font-size: 2rem; color: #94a3b8; transition: 0.3s; display: inline-flex; align-items: center; justify-content: center; width: 50px; hieght: 50px; }
         .social-icon:hover { color: #38bdf8; transform: scale(1.2); }
+        .icon-whatsapp:hover { color: #22c55e; }
+        .icon-tiktok:hover { color: #ff0050; }
+        .icon-behance:hover { color: #0057ff; }
+        .icon-instagram:hover { color: #e1306c; }
     </style>
 </head>
 <body>
@@ -35,20 +40,20 @@
             Graphic Designer Portfolio
         </div>
         <h1 class="text-6xl md:text-7xl font-black mb-4 uppercase">GUIDELINE <span class="text-sky-500">DESIGN</span></h1>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-8">نحول أفكارك إلى تجارب بصرية مبهرة. تواصل معي عبر المنصات التالية:</p>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">نحول أفكارك إلى تجارب بصرية مبهرة. تواصل معي عبر المنصات التالية:</p>
         
-        <div class="grid grid-cols-3 md:flex md:justify-center gap-8 mb-10 max-w-xs mx-auto md:max-w-none">
+        <div class="flex flex-wrap justify-center gap-6 mb-10 max-w-2xl mx-auto">
             <a href="https://www.facebook.com/GuidelineDesign911" target="_blank" class="social-icon" title="فيسبوك"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/amr_aboelnasr2020?utm_source=qr&igsh=a3c1YmM3ZXR6cGJl" target="_blank" class="social-icon" title="انستجرام"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@guidelinedesign?_r=1&_t=ZS-93dk1SJ3Ruz" target="_blank" class="social-icon" title="تيك توك"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.behance.net/guideline911" target="_blank" class="social-icon" title="بيهانس"><i class="fab fa-behance"></i></a>
-            <a href="https://wa.me/966557935928" target="_blank" class="social-icon text-green-500" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/amr_aboelnasr2020?utm_source=qr&igsh=a3c1YmM3ZXR6cGJl" target="_blank" class="social-icon icon-instagram" title="انستجرام"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@guidelinedesign?_r=1&_t=ZS-93dk1SJ3Ruz" target="_blank" class="social-icon icon-tiktok" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.behance.net/guideline911" target="_blank" class="social-icon icon-behance" title="بيهانس"><i class="fab fa-behance"></i></a>
+            <a href="https://wa.me/966557935928" target="_blank" class="social-icon icon-whatsapp" title="واتساب"><i class="fab fa-whatsapp"></i></a>
             <a href="tel:00966557935928" class="social-icon" title="اتصال هاتف"><i class="fas fa-phone"></i></a>
         </div>
     </header>
 
     <section id="work" class="max-w-7xl mx-auto py-10 px-6">
-        <h2 class="text-3xl font-bold mb-10 border-r-4 border-sky-500 pr-4 italic text-right">معرض الأعمال</h2>
+        <h2 class="text-3xl font-bold mb-10 border-r-4 border-sky-500 pr-4 italic">معرض الأعمال</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="projects-grid">
             <script>
                 const grid = document.getElementById('projects-grid');
@@ -60,7 +65,7 @@
                                      onerror="this.src='https://via.placeholder.com/400/0b1120/38bdf8?text=Project+${i}'">
                             </div>
                             <div class="p-4 border-t border-slate-800 text-center">
-                                <h3 class="font-bold text-sm text-gray-500 uppercase font-sans">Project #${i}</h3>
+                                <h3 class="font-bold text-sm text-gray-500 uppercase">Project #${i}</h3>
                             </div>
                         </div>
                     `;
