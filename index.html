@@ -23,20 +23,19 @@
             overflow-x: hidden;
         }
         
-        /* تأثير التنقل بين الصفحات */
+        /* الحالة الافتراضية: إخفاء جميع الأقسام */
         section {
-            display: none; /* إخفاء الكل افتراضياً */
+            display: none; 
             min-height: 100vh;
-            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 100px 20px;
         }
 
-        /* الصفحة النشطة فقط هي التي تظهر */
+        /* إظهار القسم النشط فقط */
         section.active {
-            display: flex;
+            display: flex !important;
             animation: fadeIn 0.5s ease-in-out;
         }
 
@@ -115,7 +114,7 @@
         </div>
     </nav>
 
-    <section id="home" class="active">
+    <section id="home">
         <div class="max-w-5xl mx-auto hero-card p-10 md:p-16 relative">
             <div class="flex justify-center md:justify-end mb-4">
                 <span class="border border-sky-500/30 text-sky-400 px-4 py-1 rounded-full text-xs font-bold bg-sky-500/10">Graphic Designer Portfolio</span>
@@ -160,23 +159,21 @@
     <script>
         // وظيفة التنقل بين الصفحات
         function showPage(pageId) {
-            // إخفاء كل السكاشن
             const sections = document.querySelectorAll('section');
             sections.forEach(sec => {
                 sec.classList.remove('active');
-                sec.style.display = 'none';
             });
 
-            // إظهار السكشن المطلوب
             const activeSection = document.getElementById(pageId);
-            activeSection.style.display = 'flex';
-            setTimeout(() => {
-                activeSection.classList.add('active');
-            }, 10);
+            activeSection.classList.add('active');
             
-            // العودة لأعلى الصفحة عند التغيير
             window.scrollTo(0, 0);
         }
+
+        // تشغيل الصفحة الرئيسية عند فتح الموقع لأول مرة
+        window.onload = () => {
+            showPage('home');
+        };
 
         // بناء معرض الصور
         const grid = document.getElementById('projects-grid');
@@ -198,7 +195,6 @@
             grid.appendChild(card);
         }
 
-        // إغلاق اللايت بوكس عند الضغط على الصورة
         overlay.onclick = () => {
             overlay.style.display = 'none';
             document.body.style.overflow = 'auto';
